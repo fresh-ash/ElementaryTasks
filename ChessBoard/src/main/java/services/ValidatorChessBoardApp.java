@@ -1,9 +1,7 @@
 package services;
-
-import input.IInputService;
 import input.ValidData;
 import input.Validated;
-import validation.IValidator;
+import interfaces.IValidator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +10,9 @@ public class ValidatorChessBoardApp implements IValidator {
 
     @Override
     public List<Validated> validateData(String[] args, int neededCountArgs) throws IllegalArgumentException {
-        List<Validated> validData = new ArrayList<>();
-        if(IInputService.getDataFromInput(args, neededCountArgs) != null){
+        List<Validated> validData;
+        if(args.length == neededCountArgs){
+            validData = new ArrayList<>();
             for (int i = 0; i < args.length; i++){
                 Integer data = Integer.valueOf(args[i]);
                 if(IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)){

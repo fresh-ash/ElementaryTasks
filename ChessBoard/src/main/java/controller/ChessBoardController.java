@@ -3,7 +3,7 @@ package controller;
 import input.Validated;
 import interfaces.Messages;
 import model.ChessBoardBuilder;
-import validation.IValidator;
+import interfaces.IValidator;
 import view.IViewChessBoardApp;
 
 import java.util.List;

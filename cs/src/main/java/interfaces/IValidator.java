@@ -1,4 +1,4 @@
-package validation;
+package interfaces;
 
 import input.Validated;
 import java.util.List;

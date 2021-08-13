@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cs" />
         <module name="FileParser" />
         <module name="NumberInWords" />
         <module name="NumericalSequence" />
@@ -13,7 +14,6 @@
         <module name="EnvelopesAnalysis" />
         <module name="ChessBoard" />
         <module name="HappyTickets" />
-        <module name="services" />
         <module name="FibonacciNumbers" />
         <module name="TrianglesSorting" />
       </profile>
