@@ -28,7 +28,7 @@ public class EnvelopesAnalysisController {
         return cli.checkAnswer(str);
     }
 
-    public Float getCorrectInputParameter(String inviteMess) throws IllegalArgumentException{
+    public Float getCorrectInputParameter(String inviteMess){
             Float parameter = null;
             while (parameter == null){
                 String consoleInput = waitInput(inviteMess);
@@ -61,7 +61,7 @@ public class EnvelopesAnalysisController {
         else {
             view.showCompareEnvelopes(envelopeAB, envelopeCD, false);
         }
-        if (cli.checkAnswer("Do you want to continue? Please, type \'yes\' or \'y\':")){
+        if (cli.checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
             getDataAndShow();
         }
 

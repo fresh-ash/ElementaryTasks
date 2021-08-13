@@ -35,6 +35,13 @@ public class Envelope implements Comparable<Envelope>{
         this.width = width;
     }
 
+
+    @Override
+    public String toString() {
+        String str = "\u2709" + name + "(h: " + height + ", w: " + width + ")";
+        return str;
+    }
+
     @Override
     public int compareTo(Envelope o) {
         if(this.width > o.getWidth() || this.width > o.getHeight()){
