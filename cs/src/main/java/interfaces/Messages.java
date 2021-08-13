@@ -6,4 +6,6 @@ public interface Messages {
     String UNDEFINED_ERR = "Undefined exception!";
     //ChessBoardApp messages
     String CHESS_BOARD_WARNING_MESS = "Console window does not have needed width! You'll see cut version!";
+
+    String ENVELOPES_WELCOME_MESSAGE = "Try to put one envelop in another!";
 }

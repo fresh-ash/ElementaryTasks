@@ -1,19 +1,23 @@
 package services;
 
-import input.Validated;
 import interfaces.IValidator;
+import interfaces.Messages;
 
-import java.util.List;
+public class ValidatorEnvelopesAnalysisApp implements IValidateData {
 
-public class ValidatorEnvelopesAnalysisApp implements IValidator {
-
-    @Override
-    public List<Validated> validateData(String[] args, int neededCountArgs) throws IllegalArgumentException{
-        if (args.length == neededCountArgs){
-
-        }
-        else {
-            throw new IllegalArgumentException();
+    public Float validateInput(String str){
+        try {
+            if (str != "" && str != null) {
+                Float data = Float.valueOf(str);
+                if (IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)) {
+                    throw new IllegalArgumentException();
+                }
+                return data;
+            } else {
+                throw new IllegalArgumentException();
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println(Messages.INCORRECT_INPUT);
         }
         return null;
     }

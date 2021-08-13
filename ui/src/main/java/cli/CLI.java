@@ -18,4 +18,11 @@ public class CLI implements IInputService {
         return str;
     }
 
+    public boolean checkAnswer(String str) {
+        String answer = waitConsoleInput(str);
+        answer = answer.toLowerCase();
+        if (answer.equals("y")  || answer.equals("yes")) return true;
+        return false;
+    }
+
 }

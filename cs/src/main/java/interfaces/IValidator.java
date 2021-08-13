@@ -12,7 +12,7 @@ public interface IValidator {
     }
 
     static boolean checkZeroValue(Number value){
-        return value.equals(0);
+        return value.doubleValue() == 0;
     }
 
     static boolean checkNegativeValue(Number value){
