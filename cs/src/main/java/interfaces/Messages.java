@@ -8,4 +8,7 @@ public interface Messages {
     String CHESS_BOARD_WARNING_MESS = "Console window does not have needed width! You'll see cut version!";
 
     String ENVELOPES_WELCOME_MESSAGE = "Try to put one envelop in another!";
+    String TRIANGLES_WELCOME_MESSAGE = "==========TRIANGLES!=========\n" +
+                                        "Type your data with next format:\n"
+                                        + "<name>,<sideA length>,<sideB length>,<sideC length>";
 }

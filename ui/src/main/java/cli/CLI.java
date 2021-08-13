@@ -1,10 +1,8 @@
 package cli;
 
-import input.IInputService;
-
 import java.util.Scanner;
 
-public class CLI implements IInputService {
+public class CLI {
 
     Scanner scanner;
 

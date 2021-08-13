@@ -4,17 +4,17 @@ import cli.CLI;
 import interfaces.Messages;
 import model.Envelope;
 import services.IValidateData;
-import view.IView;
+import view.IViewEnvelopesAnalysisApp;
 
 public class EnvelopesAnalysisController {
 
-    IView view;
+    IViewEnvelopesAnalysisApp view;
     IValidateData validateData;
     CLI cli;
     Envelope envelopeAB;
     Envelope envelopeCD;
 
-    public EnvelopesAnalysisController(IView view, IValidateData validateData, CLI cli) {
+    public EnvelopesAnalysisController(IViewEnvelopesAnalysisApp view, IValidateData validateData, CLI cli) {
         this.view = view;
         this.validateData = validateData;
         this.cli = cli;

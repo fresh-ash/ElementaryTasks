@@ -2,7 +2,7 @@ package view;
 
 import model.Envelope;
 
-public class ConsoleViewEnvelopesAnalysisApp implements IView{
+public class ConsoleViewEnvelopesAnalysisApp implements IViewEnvelopesAnalysisApp {
 
     @Override
     public void showCompareEnvelopes(Envelope envAB, Envelope envCD, boolean result) {
