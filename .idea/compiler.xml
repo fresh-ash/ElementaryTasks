@@ -9,9 +9,12 @@
         <module name="FileParser" />
         <module name="NumberInWords" />
         <module name="NumericalSequence" />
+        <module name="ui" />
         <module name="EnvelopesAnalysis" />
         <module name="ChessBoard" />
         <module name="HappyTickets" />
+        <module name="services" />
+        <module name="FibonacciNumbers" />
         <module name="TrianglesSorting" />
       </profile>
     </annotationProcessing>

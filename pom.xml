@@ -17,6 +17,7 @@
         <module>HappyTickets</module>
         <module>NumericalSequence</module>
         <module>FibonacciNumbers</module>
+        <module>services</module>
     </modules>
 
     <properties>
