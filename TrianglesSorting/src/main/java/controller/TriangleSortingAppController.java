@@ -5,7 +5,6 @@ import input.Validated;
 import interfaces.IValidator;
 import interfaces.Messages;
 import model.Triangle;
-import services.IValidateData;
 import util.MathOperations;
 import view.IViewTriangleSortApp;
 
@@ -43,26 +42,30 @@ public class TriangleSortingAppController {
     }
 
 
+    public void startApp(){
+        view.showStartMessage(Messages.TRIANGLES_WELCOME_MESSAGE);
+        getData();
+    }
+
     public void getData(){
         int neededArgsCount = 4;
-        String[] args = splitInput(waitInput(Messages.TRIANGLES_WELCOME_MESSAGE), ",");
+        String[] args = splitInput(waitInput(Messages.TRIANGLES_FORMAT_INPUT_MESSAGE), ",");
         try {
             List<Validated> validData = validator.validateData(args, neededArgsCount);
-            Float triangleSideA = (Float) validData.get(1).get();
-            Float triangleSideB = (Float) validData.get(1).get();
-            Float triangleSideC = (Float) validData.get(1).get();
+            Double triangleSideA = (Double) validData.get(1).get();
+            Double triangleSideB = (Double) validData.get(2).get();
+            Double triangleSideC = (Double) validData.get(3).get();
             Double triangleSquare = MathOperations.getTriangleSquare(triangleSideA, triangleSideB, triangleSideC);
             Triangle triangle = new Triangle((String) validData.get(0).get(), triangleSideA, triangleSideB, triangleSideC, triangleSquare);
             sortedTriangles.add(triangle);
         }
         catch (IllegalArgumentException e){
             System.out.println(Messages.INCORRECT_INPUT);
-            getData();
         }
         catch (Exception e){
-
+            System.err.println(e.getMessage());
         }
-        if (cli.checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
+        if (checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
             getData();
         }
         else {

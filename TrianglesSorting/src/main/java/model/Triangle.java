@@ -2,13 +2,13 @@ package model;
 
 public class Triangle implements Comparable<Triangle>{
 
-    float sideA;
-    float sideB;
-    float sideC;
+    Double sideA;
+    Double sideB;
+    Double sideC;
     String name;
     Double square;
 
-    public Triangle(String name, float sideA, float sideB, float sideC, Double square) {
+    public Triangle(String name, Double sideA, Double sideB, Double sideC, Double square) {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
@@ -16,27 +16,27 @@ public class Triangle implements Comparable<Triangle>{
         this.square = square;
     }
 
-    public float getSideA() {
+    public Double getSideA() {
         return sideA;
     }
 
-    public void setSideA(float sideA) {
+    public void setSideA(Double sideA) {
         this.sideA = sideA;
     }
 
-    public float getSideB() {
+    public Double getSideB() {
         return sideB;
     }
 
-    public void setSideB(float sideB) {
+    public void setSideB(Double sideB) {
         this.sideB = sideB;
     }
 
-    public float getSideC() {
+    public Double getSideC() {
         return sideC;
     }
 
-    public void setSideC(float sideC) {
+    public void setSideC(Double sideC) {
         this.sideC = sideC;
     }
 
@@ -65,7 +65,12 @@ public class Triangle implements Comparable<Triangle>{
 
     @Override
     public int compareTo(Triangle o) {
-        int compareResult = (int) (square - o.getSquare());
+        int compareResult;
+        if (this.name.equals(o.getName())){
+            compareResult = 0;
+            return compareResult;
+        }
+        compareResult = (int) (square - o.getSquare());
         return compareResult;
     }
 }

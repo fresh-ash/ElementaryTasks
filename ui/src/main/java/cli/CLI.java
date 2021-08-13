@@ -12,7 +12,7 @@ public class CLI {
 
     public String waitConsoleInput(String welcomeMessage){
         System.out.println(welcomeMessage);
-        String str = scanner.next();
+        String str = scanner.nextLine();
         return str;
     }
 

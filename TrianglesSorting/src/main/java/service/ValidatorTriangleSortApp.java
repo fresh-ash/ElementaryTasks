@@ -21,12 +21,12 @@ public class ValidatorTriangleSortApp implements IValidator {
                 throw new IllegalArgumentException();
             }
             for (int i = 1; i < args.length; i++){
-                Float data = Float.valueOf(args[i]);
+                Double data = Double.valueOf(args[i]);
                 if(IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)){
                     throw new IllegalArgumentException();
                 }
                 else {
-                    ValidData<Float> validated = new ValidData<>(data);
+                    ValidData<Double> validated = new ValidData<>(data);
                     validData.add(validated);
                 }
             }

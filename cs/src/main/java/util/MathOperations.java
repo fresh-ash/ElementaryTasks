@@ -2,45 +2,30 @@ package util;
 
 public class MathOperations {
 
-    public static float getSumValues(float sideX, float sideY){
-        float summa = sideX + sideY;
+    public static Double getSumValues(Double sideX, Double sideY){
+        Double summa = sideX + sideY;
         return summa;
     }
 
-    public static Boolean compareTwoValue(float first, float second){
-        Boolean state;
-        if (first > second){
-            state = true;
-        }
-        else if (first < second){
-            state = false;
-        }
-        else {
-            state = null;
-        }
-        return state;
-    }
-
-    public static boolean checkValidTriangle(float sideA, float sideB, float sideC){
-        if ((MathOperations.compareTwoValue(getSumValues(sideA, sideB), sideC) != null)
-                && (MathOperations.compareTwoValue(getSumValues(sideB, sideC), sideA) != null)
-                &&  (MathOperations.compareTwoValue(getSumValues(sideA, sideC), sideB) != null)){
+    public static boolean checkValidTriangle(Double sideA, Double sideB, Double sideC) throws IllegalArgumentException{
+        if ((getSumValues(sideA, sideB).compareTo(sideC) > 0 && getSumValues(sideB, sideC).compareTo(sideA) > 0
+                        && getSumValues(sideA, sideC).compareTo(sideB) > 0)) {
             return true;
         }
         return false;
     }
 
     //Можно перегрузить для экземпляра объекта
-    public static double getTriangleSquare(float sideA, float sideB, float sideC) throws IllegalArgumentException{
-        double triangleSquare;
+    public static Double getTriangleSquare(Double sideA, Double sideB, Double sideC) throws IllegalArgumentException{
+        Double triangleSquare;
         if (checkValidTriangle(sideA, sideB, sideC)) {
-            float halfOfPerimeter = (sideA + sideB + sideC) / 2;
+            Double halfOfPerimeter = (sideA + sideB + sideC) / 2;
             triangleSquare = Math.sqrt((halfOfPerimeter * (halfOfPerimeter - sideA)
                     * (halfOfPerimeter - sideB) * (halfOfPerimeter - sideC)));
             return triangleSquare;
         }
         else {
-            return 0;
+            throw new IllegalArgumentException();
         }
     }
 }
