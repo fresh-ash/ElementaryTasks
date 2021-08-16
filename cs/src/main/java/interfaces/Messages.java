@@ -11,4 +11,14 @@ public interface Messages {
     String TRIANGLES_WELCOME_MESSAGE = "==========TRIANGLES!=========\n";
     String TRIANGLES_FORMAT_INPUT_MESSAGE = "Type your data with next format:\n"
                                             + "<name>,<sideA length>,<sideB length>,<sideC length>";
+
+    String[] FIRST_RANGE = {"one", "two", "three","four", "five",
+                            "six", "seven", "eight", "nine", "ten", "eleven",
+                            "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+
+    String[] SECOND_RANGE = {"twenty", "thirty", "forty", "fifty",
+                            "sixty", "seventy", "eighty", "ninety"};
+
+    String[] RANGES = {"million", "thousand", "hundred"};
+
 }
