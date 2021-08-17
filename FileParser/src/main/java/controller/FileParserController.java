@@ -30,17 +30,25 @@ public class FileParserController {
     public void startFileParserApp() throws IOException {
         try {
             String[] data = getDataFromInput();
-            StringBuilder stringBuilder = FileIOService.readFileAsString(data[0]);
+            String string = FileIOService.readFileAsString(data[0]);
             if (data.length == 2){
-                view.showResult(StringManager.countStrings(stringBuilder.toString(), data[1]));
+                view.showResult(StringManager.countStrings(string, data[1]));
             }
             else {
-                stringBuilder.replace(0, stringBuilder.length(), data[2]);
-                System.out.println(stringBuilder);
+                FileIOService.writeToFile(string.replaceAll(data[1], data[2]), data[0]);
             }
         }
         catch (IllegalArgumentException e){
+            System.err.println("Incorrect input!");
+        }
+        catch (IOException e){
+            System.err.println("File not found!");
+        }
+        if (cli.checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
             startFileParserApp();
+        }
+        else {
+            return;
         }
     }
 }

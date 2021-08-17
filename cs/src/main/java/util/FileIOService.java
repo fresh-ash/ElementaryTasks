@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class FileIOService {
 
-    public static StringBuilder readFileAsString(String fileName) throws IOException {
+    public static String readFileAsString(String fileName) throws IOException {
 
         FileReader fileReader = new FileReader(fileName);
         Scanner scanner = new Scanner(fileReader);
-        StringBuilder data = new StringBuilder();
+        String data = new String();
         while (scanner.hasNextLine()) {
-            data.append(scanner.nextLine());
+            data += (scanner.nextLine());
         }
         fileReader.close();
         return data;
@@ -21,7 +21,8 @@ public class FileIOService {
 
     public static void writeToFile(String writeData, String fileName) throws IOException{
         FileWriter fileWriter = new FileWriter(fileName);
-
+        fileWriter.write(writeData);
+        fileWriter.close();
     }
 
 }
