@@ -1,6 +1,5 @@
 package controller;
 
-import cli.CLI;
 import interfaces.Input;
 import interfaces.Messages;
 import service.StringManager;
@@ -28,6 +27,7 @@ public class FileParserController {
     }
 
     public void startFileParserApp() throws IOException {
+
         try {
             String[] data = getDataFromInput();
             String string = FileIOService.readFileAsString(data[0]);
@@ -44,7 +44,11 @@ public class FileParserController {
         catch (IOException e){
             System.err.println("File not found!");
         }
-        if (cli.checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
+        catch (Exception e){
+            System.err.println(e.getMessage());
+        }
+
+        if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startFileParserApp();
         }
         else {

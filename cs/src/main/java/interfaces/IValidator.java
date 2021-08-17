@@ -22,7 +22,7 @@ public interface IValidator {
 
     static Integer getIntegerFromString(String str) throws IllegalArgumentException{
         Integer data = Integer.valueOf(str);
-        if(IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)){
+        if( IValidator.checkNegativeValue(data)){
             throw new IllegalArgumentException();
         }
         else {
