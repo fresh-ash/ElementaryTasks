@@ -21,4 +21,8 @@ public interface Messages {
 
     String[] RANGES = {"million", "thousand", "hundred"};
 
+    String PARSER_WELCOME_MESSAGE = "Type your data with next format:\n"
+                                    + "<file path>, <string for count> or\n" +
+                                        "<file path>, <string>, <replace string>";
+
 }

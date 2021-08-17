@@ -27,7 +27,7 @@ public class TriangleSortingAppController {
     }
 
     public String waitInput(String str){
-        return cli.waitConsoleInput(str);
+        return cli.waitInput(str);
     }
 
     public boolean checkAnswer(String str){

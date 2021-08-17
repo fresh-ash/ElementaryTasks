@@ -1,6 +1,7 @@
-package service;
+package util;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -16,6 +17,11 @@ public class FileIOService {
         }
         fileReader.close();
         return data;
+    }
+
+    public static void writeToFile(String writeData, String fileName) throws IOException{
+        FileWriter fileWriter = new FileWriter(fileName);
+
     }
 
 }
