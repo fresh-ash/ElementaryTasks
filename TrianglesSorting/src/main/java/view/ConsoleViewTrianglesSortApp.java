@@ -20,6 +20,6 @@ public class ConsoleViewTrianglesSortApp implements IViewTriangleSortApp{
 
     @Override
     public void showStartMessage(String str) {
-
+        System.out.println(str);
     }
 }

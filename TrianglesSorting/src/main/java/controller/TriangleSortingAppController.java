@@ -65,7 +65,7 @@ public class TriangleSortingAppController {
         catch (Exception e){
             System.err.println(e.getMessage());
         }
-        if (checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
+        if (checkAnswer(Messages.CHECK_ANSWER)){
             getData();
         }
         else {

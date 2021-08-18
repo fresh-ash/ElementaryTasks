@@ -6,6 +6,7 @@ import interfaces.Messages;
 import service.TicketsHelper;
 import view.IViewHappyTickets;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class HappyTicketsController {
@@ -22,7 +23,7 @@ public class HappyTicketsController {
     }
 
     void getAndValidateData() throws IllegalArgumentException{
-        String[] data = cli.waitInput("Please, type MIN and MAX numbers of ticket:\n < min >  < max >:").split(" ");
+        String[] data = Input.splitInput(cli.waitInput("Please, type MIN and MAX numbers of ticket!\n < min >, < max >:"), ",") ;
         if (data.length == 2){
             startSequence = IValidator.getIntegerFromString(data[0]);
             finishSequence = IValidator.getIntegerFromString(data[1]);
@@ -50,6 +51,11 @@ public class HappyTicketsController {
         else {
             return;
         }
+    }
+
+    public void showWelcomeMessAndStart(){
+        view.showWelcomeMess(Messages.HAPPY_TICKET_WELCOME_MESSAGE);
+        startHappyTicketApp();
     }
 
     String getWinner(Map<String, Integer> map){

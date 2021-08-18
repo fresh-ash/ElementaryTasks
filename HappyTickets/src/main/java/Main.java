@@ -8,6 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
         HappyTicketsController controller = new HappyTicketsController(new HappyTicketsView(), new CLI(new Scanner(System.in)));
-        controller.startHappyTicketApp();
+        controller.showWelcomeMessAndStart();
     }
 }

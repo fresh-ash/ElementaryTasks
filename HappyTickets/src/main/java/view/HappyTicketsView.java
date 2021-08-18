@@ -10,4 +10,9 @@ public class HappyTicketsView implements IViewHappyTickets{
         System.out.printf("Difficult way got %s HappyTickets\n", map.get("DifficultWay"));
         System.out.println(winner);
     }
+
+    @Override
+    public void showWelcomeMess(String str) {
+        System.out.println(str);
+    }
 }

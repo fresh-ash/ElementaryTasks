@@ -2,6 +2,7 @@ package cli;
 
 import interfaces.Input;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CLI implements Input{
@@ -24,5 +25,7 @@ public class CLI implements Input{
         if (answer.equals("y")  || answer.equals("yes")) return true;
         return false;
     }
+
+
 
 }
