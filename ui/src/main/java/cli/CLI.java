@@ -1,8 +1,6 @@
 package cli;
 
 import interfaces.Input;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CLI implements Input{

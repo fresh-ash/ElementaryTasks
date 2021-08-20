@@ -9,7 +9,7 @@ public interface Messages {
     String CHESS_BOARD_WARNING_MESS = "Console window does not have needed width! You'll see cut version!";
     String HAPPY_TICKET_WELCOME_MESSAGE = "==========Happy Tickets==========";
     String ENVELOPES_WELCOME_MESSAGE = "Try to put one envelop in another!";
-    String TRIANGLES_WELCOME_MESSAGE = "==========TRIANGLES!=========\n";
+    String TRIANGLES_WELCOME_MESSAGE = "==========TRIANGLES=========\n";
     String TRIANGLES_FORMAT_INPUT_MESSAGE = "Type your data with next format:\n"
                                             + "<name>,<sideA length>,<sideB length>,<sideC length>";
 
@@ -25,5 +25,11 @@ public interface Messages {
     String PARSER_WELCOME_MESSAGE = "Type your data with next format:\n"
                                     + "<file path>, <string for count> or\n" +
                                         "<file path>, <string>, <replace string>";
+
+    String NUMERICAL_SEQUENCE_WELCOME_MESS = "============Numerical Sequence============";
+    String NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE = "Please, enter needed length of sequence and minimal square\n" +
+                                                        "<length of sequence>, <minimal square>";
+
+
 
 }

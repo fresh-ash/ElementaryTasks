@@ -22,11 +22,16 @@ public class HappyTicketsController {
         this.cli = cli;
     }
 
+    public void showWelcomeMessAndStart(){
+        view.showWelcomeMess(Messages.HAPPY_TICKET_WELCOME_MESSAGE);
+        startHappyTicketApp();
+    }
+
     void getAndValidateData() throws IllegalArgumentException{
         String[] data = Input.splitInput(cli.waitInput("Please, type MIN and MAX numbers of ticket!\n < min >, < max >:"), ",") ;
         if (data.length == 2){
-            startSequence = IValidator.getIntegerFromString(data[0]);
-            finishSequence = IValidator.getIntegerFromString(data[1]);
+            startSequence = IValidator.getPositiveIntegerFromString(data[0]);
+            finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
         }
         else {
             throw new IllegalArgumentException();
@@ -51,11 +56,6 @@ public class HappyTicketsController {
         else {
             return;
         }
-    }
-
-    public void showWelcomeMessAndStart(){
-        view.showWelcomeMess(Messages.HAPPY_TICKET_WELCOME_MESSAGE);
-        startHappyTicketApp();
     }
 
     String getWinner(Map<String, Integer> map){

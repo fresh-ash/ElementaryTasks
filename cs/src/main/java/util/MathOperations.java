@@ -1,5 +1,9 @@
 package util;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class MathOperations {
 
     public static Double getSumValues(Double sideX, Double sideY){
@@ -27,5 +31,9 @@ public class MathOperations {
         else {
             throw new IllegalArgumentException();
         }
+    }
+
+    public static List<Integer> getIntegerSequence(int start, int end){
+        return IntStream.range(start, end).boxed().collect(Collectors.toList());
     }
 }

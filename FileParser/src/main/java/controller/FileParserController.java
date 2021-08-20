@@ -36,6 +36,7 @@ public class FileParserController {
             }
             else {
                 FileIOService.writeToFile(string.replaceAll(data[1], data[2]), data[0]);
+                System.err.println("Success!");
             }
         }
         catch (IllegalArgumentException e){

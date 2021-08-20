@@ -13,7 +13,7 @@ public class FileIOService {
         Scanner scanner = new Scanner(fileReader);
         String data = new String();
         while (scanner.hasNextLine()) {
-            data += (scanner.nextLine());
+            data += (scanner.nextLine()) + "\n";
         }
         fileReader.close();
         return data;

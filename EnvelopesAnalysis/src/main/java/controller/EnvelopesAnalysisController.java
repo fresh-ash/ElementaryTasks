@@ -61,8 +61,11 @@ public class EnvelopesAnalysisController {
         else {
             view.showCompareEnvelopes(envelopeAB, envelopeCD, false);
         }
-        if (cli.checkAnswer("Do you want to continue?\nPlease, type \'yes\' or \'y\':")){
+        if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             getDataAndShow();
+        }
+        else {
+            return;
         }
 
     }
