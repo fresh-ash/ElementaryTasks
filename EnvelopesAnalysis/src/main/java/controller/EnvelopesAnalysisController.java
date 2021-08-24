@@ -1,6 +1,6 @@
 package controller;
 
-import cli.CLI;
+import input.CLI;
 import interfaces.Messages;
 import model.Envelope;
 import services.IValidateData;

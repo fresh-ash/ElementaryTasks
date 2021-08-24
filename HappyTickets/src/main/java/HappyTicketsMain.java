@@ -1,12 +1,14 @@
-import cli.CLI;
+import input.CLI;
 import controller.HappyTicketsController;
+import interfaces.Command;
 import view.HappyTicketsView;
 
 import java.util.Scanner;
 
-public class Main {
+public class HappyTicketsMain implements Command {
 
-    public static void main(String[] args) {
+    @Override
+    public void runCommand() {
         HappyTicketsController controller = new HappyTicketsController(new HappyTicketsView(), new CLI(new Scanner(System.in)));
         controller.showWelcomeMessAndStart();
     }

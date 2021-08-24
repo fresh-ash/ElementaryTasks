@@ -1,6 +1,6 @@
 package controller;
 
-import cli.CLI;
+import input.CLI;
 import input.Validated;
 import interfaces.IValidator;
 import interfaces.Messages;

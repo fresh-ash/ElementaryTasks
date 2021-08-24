@@ -1,4 +1,4 @@
-import cli.CLI;
+import input.CLI;
 import controller.EnvelopesAnalysisController;
 import services.ValidatorEnvelopesAnalysisApp;
 import view.ConsoleViewEnvelopesAnalysisApp;

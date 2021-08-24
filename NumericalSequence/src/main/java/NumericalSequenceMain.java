@@ -1,15 +1,16 @@
-import cli.CLI;
+import input.CLI;
 import controller.NumericalSequenceController;
-import model.MagicNumber;
-import util.MathOperations;
+import interfaces.Command;
 import view.NumericalSequenceView;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class NumericalSequenceMain implements Command {
+
+    @Override
+    public void runCommand() {
         NumericalSequenceController controller = new NumericalSequenceController(new NumericalSequenceView(),
-                                                new CLI(new Scanner(System.in)));
+                new CLI(new Scanner(System.in)));
         controller.showWelcomeMessageAndStart();
     }
 }

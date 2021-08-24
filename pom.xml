@@ -17,8 +17,8 @@
         <module>HappyTickets</module>
         <module>NumericalSequence</module>
         <module>FibonacciNumbers</module>
-        <module>cs</module>
-        <module>ui</module>
+        <module>common</module>
+        <module>tasks</module>
     </modules>
 
     <properties>

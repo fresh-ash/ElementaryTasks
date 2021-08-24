@@ -1,15 +1,15 @@
-import cli.CLI;
+import input.CLI;
 import controller.FileParserController;
-import util.FileIOService;
-import service.StringManager;
+import interfaces.Command;
 import view.ConsoleViewFileParser;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class FileParserMain implements Command {
+
+    @Override
+    public void runCommand() {
         try {
             FileParserController controller = new FileParserController(new ConsoleViewFileParser(), new CLI(new Scanner(System.in)));
             controller.startFileParserApp();
@@ -17,5 +17,5 @@ public class Main {
         catch (IOException e){
             e.getMessage();
         }
-        }
+    }
 }

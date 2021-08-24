@@ -6,17 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cs" />
         <module name="FileParser" />
         <module name="NumberInWords" />
         <module name="NumericalSequence" />
-        <module name="ui" />
+        <module name="common" />
         <module name="EnvelopesAnalysis" />
         <module name="ChessBoard" />
         <module name="HappyTickets" />
         <module name="FibonacciNumbers" />
+        <module name="tasks" />
         <module name="TrianglesSorting" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ui" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>

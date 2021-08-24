@@ -5,8 +5,6 @@ import interfaces.Input;
 import interfaces.Messages;
 import service.TicketsHelper;
 import view.IViewHappyTickets;
-
-import java.util.Arrays;
 import java.util.Map;
 
 public class HappyTicketsController {

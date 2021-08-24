@@ -1,4 +1,4 @@
-package cli;
+package input;
 
 import interfaces.Input;
 import java.util.Scanner;

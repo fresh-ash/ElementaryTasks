@@ -1,30 +1,47 @@
 package controller;
 
-import input.Validated;
+import interfaces.Input;
 import interfaces.Messages;
 import model.ChessBoardBuilder;
 import interfaces.IValidator;
 import view.IViewChessBoardApp;
 
-import java.util.List;
-
 public class ChessBoardController {
 
     IViewChessBoardApp viewChessBoardApp;
-    IValidator validator;
+    Input cli;
+    Integer height;
+    Integer width;
 
-    public ChessBoardController(IViewChessBoardApp viewChessBoardApp, IValidator validator) {
+    public ChessBoardController(IViewChessBoardApp viewChessBoardApp, Input cli) {
         this.viewChessBoardApp = viewChessBoardApp;
-        this.validator = validator;
+        this.cli = cli;
     }
 
-    public void startChessBoardApp(String[] args){
-        int neededArgsCont = 2;
+    public void showWelcomeMessAndStartApp(){
+        viewChessBoardApp.showWelcomeMess(Messages.CHESS_BOARD_WELCOME_MESS);
+        startChessBoardApp();
+    }
+
+    String[] getDataFromInput() throws IllegalArgumentException{
+        String[] input = Input.splitInput(cli.waitInput(Messages.CHESS_BOARD_FORMAT_INPUT),",");
+        if(input.length != 2){
+            throw new IllegalArgumentException();
+        }
+        return input;
+    }
+
+    public void startChessBoardApp(){
         try{
-            List<Validated> argsList = validator.validateData(args, neededArgsCont);
+            String[] data = getDataFromInput();
+            this.height = IValidator.getPositiveIntegerFromString(data[0]);
+            this.width = IValidator.getPositiveIntegerFromString(data[1]);
+            if (IValidator.checkZeroValue(width) || IValidator.checkZeroValue(height)){
+                throw new IllegalArgumentException();
+            }
             ChessBoardBuilder boardBuilder = new ChessBoardBuilder();
-            boardBuilder.setHeight((Integer) argsList.get(0).get());
-            boardBuilder.setWidth((Integer) argsList.get(1).get());
+            boardBuilder.setHeight(height);
+            boardBuilder.setWidth(width);
             viewChessBoardApp.showBoard(boardBuilder.getBoard());
         }
         catch (IllegalArgumentException e){
@@ -32,6 +49,12 @@ public class ChessBoardController {
         }
         catch (Exception e){
             System.err.println(Messages.UNDEFINED_ERR + e.getMessage());
+        }
+        if (cli.checkAnswer(Messages.CHECK_ANSWER)){
+            startChessBoardApp();
+        }
+        else {
+            return;
         }
     }
 }

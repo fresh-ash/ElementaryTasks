@@ -22,5 +22,10 @@ public class ConsoleViewChessBoardApp implements IViewChessBoardApp{
         }
 
     }
+
+    @Override
+    public void showWelcomeMess(String str) {
+
+    }
 }
 

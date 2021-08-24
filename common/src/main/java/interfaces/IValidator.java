@@ -25,9 +25,8 @@ public interface IValidator {
         if( IValidator.checkNegativeValue(data)){
             throw new IllegalArgumentException();
         }
-        else {
-            return data;
-        }
+        return data;
+
     }
 
     static Double getDoubleFromString(String str) throws IllegalArgumentException{
@@ -35,17 +34,13 @@ public interface IValidator {
         if(IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)){
             throw new IllegalArgumentException();
         }
-        else {
-            return data;
-        }
+        return data;
     }
 
     static String getStringFromInput(String str) throws IllegalArgumentException{
-        if (str != ""){
-            return str;
-        }
-        else {
+        if (str == ""){
             throw new IllegalArgumentException();
         }
+        return str;
     }
 }

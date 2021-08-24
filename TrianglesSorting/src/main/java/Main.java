@@ -1,4 +1,4 @@
-import cli.CLI;
+import input.CLI;
 import controller.TriangleSortingAppController;
 import service.ValidatorTriangleSortApp;
 import view.ConsoleViewTrianglesSortApp;
