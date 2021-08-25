@@ -24,10 +24,9 @@ public class NumericalSequenceController {
     public void showWelcomeMessageAndStart(){
         view.showWelcomeMessage(Messages.NUMERICAL_SEQUENCE_WELCOME_MESS);
         startNumericalSequenceApp();
-
     }
 
-    void getAndValidateData() throws IllegalArgumentException{
+    public void getAndValidateData() throws IllegalArgumentException{
         String[] data = Input.splitInput(cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE), ",");
         if (data.length == 2){
             sequenceLength = IValidator.getPositiveIntegerFromString(data[0]);
@@ -39,10 +38,10 @@ public class NumericalSequenceController {
         }
     }
 
-    void startNumericalSequenceApp(){
+    public void startNumericalSequenceApp(){
         try {
             getAndValidateData();
-            List<Integer> sequence = MathOperations.getIntegerSequence(magicNumber.getOutput(),
+            List<Integer> sequence = MathOperations.getIntegerSequenceAsList(magicNumber.getOutput(),
                                         magicNumber.getOutput() + sequenceLength);
             view.showSequence(sequence);
         }

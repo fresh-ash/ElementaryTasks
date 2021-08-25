@@ -6,7 +6,7 @@ public class MagicNumber {
     Integer output;
 
     public MagicNumber(Double input) {
-        this.input = input;
+        this.input = Math.abs(input);
     }
 
     public Double getInput() {
@@ -14,18 +14,15 @@ public class MagicNumber {
     }
 
     public void setInput(Double input) {
-        this.input = input;
+        this.input = Math.abs(input);
     }
 
     public Integer getOutput() {
-        Integer tempInput = input.intValue();
-        if(input > tempInput){
-            output = tempInput + 1;
-            return output;
+        output = input.intValue();
+        if(input > output){
+            output += 1;
         }
-        else {
-            return input.intValue();
-        }
+        return output;
     }
 
     public void setOutput(Integer output) {

@@ -3,9 +3,11 @@ package controller;
 import interfaces.IValidator;
 import interfaces.Input;
 import interfaces.Messages;
+import model.DifficultCountStrategy;
+import model.EasyCountStrategy;
+import model.HappyTicketsHolder;
 import service.TicketsHelper;
 import view.IViewHappyTickets;
-import java.util.Map;
 
 public class HappyTicketsController {
 
@@ -13,7 +15,6 @@ public class HappyTicketsController {
     Input cli;
     Integer startSequence;
     Integer finishSequence;
-
 
     public HappyTicketsController(IViewHappyTickets view, Input cli) {
         this.view = view;
@@ -27,20 +28,21 @@ public class HappyTicketsController {
 
     void getAndValidateData() throws IllegalArgumentException{
         String[] data = Input.splitInput(cli.waitInput("Please, type MIN and MAX numbers of ticket!\n < min >, < max >:"), ",") ;
-        if (data.length == 2){
-            startSequence = IValidator.getPositiveIntegerFromString(data[0]);
-            finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
-        }
-        else {
+        if (data.length != 2){
             throw new IllegalArgumentException();
         }
+        startSequence = IValidator.getPositiveIntegerFromString(data[0]);
+        finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
     }
 
     public void startHappyTicketApp(){
         try {
             getAndValidateData();
-            Map<String, Integer> happyTickets = TicketsHelper.countHappyTickets(startSequence, finishSequence);
-            view.showResult(happyTickets, getWinner(happyTickets));
+            HappyTicketsHolder easyWay = new HappyTicketsHolder(new EasyCountStrategy());
+            HappyTicketsHolder difficultWay = new HappyTicketsHolder(new DifficultCountStrategy());
+            TicketsHelper ticketsHelper = new TicketsHelper(easyWay, difficultWay);
+            ticketsHelper.countHappyTickets(startSequence, finishSequence);
+            view.showResult(easyWay.getCountHappyTickets(), difficultWay.getCountHappyTickets(), ticketsHelper.getWinner());
         }
         catch (IllegalArgumentException e){
             System.err.println(Messages.INCORRECT_INPUT);
@@ -56,15 +58,5 @@ public class HappyTicketsController {
         }
     }
 
-    String getWinner(Map<String, Integer> map){
-        String winner;
-        if (map.get("EasyWay") > map.get("DifficultWay")){
-            winner = "EasyWay wins";
-        }
-        else if (map.get("EasyWay") < map.get("DifficultWay")){
-            winner = "DifficultWay wins";
-        }
-        else winner = "Draw";
-        return winner;
-    }
+
 }

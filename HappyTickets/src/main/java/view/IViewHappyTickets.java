@@ -3,6 +3,6 @@ package view;
 import java.util.Map;
 
 public interface IViewHappyTickets {
-    void showResult(Map<String, Integer> map, String winner);
+    void showResult(Integer easyWayCount, Integer difficultWayCount, int winner);
     void showWelcomeMess(String str);
 }

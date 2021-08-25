@@ -33,7 +33,7 @@ public class MathOperations {
         }
     }
 
-    public static List<Integer> getIntegerSequence(int start, int end){
+    public static List<Integer> getIntegerSequenceAsList(int start, int end){
         return IntStream.range(start, end).boxed().collect(Collectors.toList());
     }
 }

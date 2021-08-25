@@ -37,8 +37,12 @@ public class EnvelopesAnalysisController {
             return parameter;
         }
 
-    public void writeData(){
+    public void showWelcomeMessAndStart(){
         view.showWelcomeMessage(Messages.ENVELOPES_WELCOME_MESSAGE);
+        getDataAndShow();
+    }
+
+    public void writeData(){
             Float heightEnvelopAB = getCorrectInputParameter("Please, enter value for height EnvelopAB:");
             Float widthEnvelopAB = getCorrectInputParameter("Please, enter value for width EnvelopAB:");
             Float heightEnvelopCD = getCorrectInputParameter("Please, enter value for height EnvelopCD:");

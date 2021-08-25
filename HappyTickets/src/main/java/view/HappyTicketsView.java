@@ -5,14 +5,26 @@ import java.util.Map;
 public class HappyTicketsView implements IViewHappyTickets{
 
     @Override
-    public void showResult(Map<String, Integer> map, String winner) {
-        System.out.printf("Easy way got %s \"Happy\" Tickets\n", map.get("EasyWay"));
-        System.out.printf("Difficult way got %s \"Happy\" Tickets\n", map.get("DifficultWay"));
-        System.out.println(winner);
+    public void showResult(Integer easyWayCount, Integer difficultWayCount, int winner) {
+        System.out.println("Ease way got " + easyWayCount + " \'happy\' tickets!");
+        System.out.println("Difficult way got " + difficultWayCount + " \'happy\' tickets!");
+        printWinner(winner);
     }
 
     @Override
     public void showWelcomeMess(String str) {
         System.out.println(str);
+    }
+
+    void printWinner(int value){
+        if (value > 0){
+            System.out.println("Ease Way wins!");
+        }
+        if (value < 0){
+            System.out.println("Difficult Way wins!");
+        }
+        else {
+            System.out.println("Draw!");
+        }
     }
 }

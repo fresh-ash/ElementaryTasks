@@ -13,11 +13,11 @@ public class Ticket {
         this.number = number;
     }
 
-    public List<Byte> getNumberAsArray(){
+    public List<Integer> getNumberAsArray(){
         int tempNumber = this.number;
-        List<Byte> numberAsList = new ArrayList<>();
+        List<Integer> numberAsList = new ArrayList<>();
         while (tempNumber > 0){
-            numberAsList.add((byte) (tempNumber%10));
+            numberAsList.add(tempNumber%10);
             tempNumber /= 10;
         }
         return numberAsList;
