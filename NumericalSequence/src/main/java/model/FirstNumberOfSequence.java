@@ -1,12 +1,12 @@
 package model;
 
-public class MagicNumber {
+public class FirstNumberOfSequence {
 
     Double input;
     Integer output;
 
-    public MagicNumber(Double input) {
-        this.input = Math.abs(input);
+    public FirstNumberOfSequence(Double input) {
+        this.input = input;
     }
 
     public Double getInput() {
@@ -17,7 +17,10 @@ public class MagicNumber {
         this.input = Math.abs(input);
     }
 
-    public Integer getOutput() {
+    public Integer getOutput() throws IllegalArgumentException{
+        if (input < 0){
+            throw new IllegalArgumentException();
+        }
         output = input.intValue();
         if(input > output){
             output += 1;

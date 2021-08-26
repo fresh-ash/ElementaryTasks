@@ -23,7 +23,7 @@ public class HappyTicketsView implements IViewHappyTickets{
         if (value < 0){
             System.out.println("Difficult Way wins!");
         }
-        else {
+        if (value == 0) {
             System.out.println("Draw!");
         }
     }

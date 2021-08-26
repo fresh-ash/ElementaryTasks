@@ -14,10 +14,10 @@ public class TicketTest {
     Ticket ticket;
 
     @Before
-    public void init(){
-        testValue = 3045;
-        ticket = new Ticket(testValue);
-        expectedList = new ArrayList<>(Arrays.asList(5,4,0,3));
+   public void init(){
+        testValue = 30450;
+         ticket = new Ticket(testValue);
+        expectedList = new ArrayList<>(Arrays.asList(0,5,4,0,3));
     }
 
     @Test

@@ -1,0 +1,29 @@
+2021-08-26 15:58:33 INFO  NumericalSequenceController:24 - Create controller
+2021-08-26 15:58:36 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-08-26 15:58:36 ERROR NumericalSequenceController:54 - Incorrect input!
+2021-08-26 15:58:45 INFO  NumericalSequenceController:42 - Get correct data
+2021-08-26 15:58:45 INFO  NumericalSequenceController:50 - Show result
+2021-08-26 15:59:07 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-08-26 15:59:07 ERROR NumericalSequenceController:54 - Incorrect input!
+2021-08-26 15:59:09 INFO  NumericalSequenceController:30 - Start application
+2021-08-26 16:01:50 INFO  NumericalSequenceController:24 - Create controller
+2021-08-26 16:01:55 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-08-26 16:01:55 ERROR NumericalSequenceController:54 - Incorrect input!
+2021-08-26 16:02:00 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-08-26 16:02:00 ERROR NumericalSequenceController:54 - Incorrect input!
+2021-08-26 16:02:10 INFO  NumericalSequenceController:30 - Start application
+2021-08-26 16:03:56 INFO  NumericalSequenceController:24 - Create controller
+2021-08-26 16:03:56 INFO  NumericalSequenceController:29 - Start application
+2021-08-26 16:03:59 ERROR NumericalSequenceController:37 - Incorrect input! Few arguments!
+2021-08-26 16:04:05 INFO  NumericalSequenceController:43 - Get correct data
+2021-08-26 16:04:05 INFO  NumericalSequenceController:51 - Show result
+2021-08-26 16:04:25 INFO  NumericalSequenceController:43 - Get correct data
+2021-08-26 16:04:25 INFO  NumericalSequenceController:51 - Show result
+2021-08-26 23:37:11 INFO  NumericalSequenceController:24 - Create controller
+2021-08-26 23:37:11 INFO  NumericalSequenceController:29 - Start application
+2021-08-26 23:37:20 INFO  NumericalSequenceController:47 - Get correct data
+2021-08-26 23:37:21 INFO  NumericalSequenceController:51 - Show result
+2021-08-26 23:40:23 INFO  NumericalSequenceController:24 - Create controller
+2021-08-26 23:40:23 INFO  NumericalSequenceController:29 - Start application
+2021-08-26 23:40:26 INFO  NumericalSequenceController:47 - Get correct data
+2021-08-26 23:40:26 INFO  NumericalSequenceController:51 - Show result

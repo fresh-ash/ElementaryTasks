@@ -17,12 +17,20 @@ public interface Messages {
     String INCORRECT_INPUT = "Incorrect input! Try again!";
     String UNDEFINED_ERR = "Undefined exception!";
     String CHECK_ANSWER = "Do you want to continue?\nPlease, type \'yes\' or \'y\':";
+
     //ChessBoardApp messages
     String CHESS_BOARD_WELCOME_MESS = "==========Chess Board===========";
     String CHESS_BOARD_FORMAT_INPUT = "Please, enter your data with next format:\n <height>, <width>";
     String CHESS_BOARD_WARNING_MESS = "Console window does not have needed width! You'll see cut version!";
+
+    //HappyTicketApp
     String HAPPY_TICKET_WELCOME_MESSAGE = "==========Happy Tickets==========";
+    String HAPPY_TICKET_FORMAT_INPUT = "Please, type MIN and MAX numbers of ticket!\n < min >, < max >:";
+
+    //Envelopes
     String ENVELOPES_WELCOME_MESSAGE = "Try to put one envelop in another!";
+
+    //TriangleSorting
     String TRIANGLES_WELCOME_MESSAGE = "==========TRIANGLES=========\n";
     String TRIANGLES_FORMAT_INPUT_MESSAGE = "Type your data with next format:\n"
                                             + "<name>,<sideA length>,<sideB length>,<sideC length>";

@@ -27,7 +27,7 @@ public class HappyTicketsController {
     }
 
     void getAndValidateData() throws IllegalArgumentException{
-        String[] data = Input.splitInput(cli.waitInput("Please, type MIN and MAX numbers of ticket!\n < min >, < max >:"), ",") ;
+        String[] data = Input.splitInput(cli.waitInput(Messages.HAPPY_TICKET_FORMAT_INPUT), ",") ;
         if (data.length != 2){
             throw new IllegalArgumentException();
         }
@@ -53,10 +53,5 @@ public class HappyTicketsController {
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startHappyTicketApp();
         }
-        else {
-            return;
-        }
     }
-
-
 }
