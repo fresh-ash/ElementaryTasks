@@ -3,7 +3,7 @@ package model;
 import java.util.List;
 import java.util.function.BiFunction;
 
-public class BaseCountStrategy implements ICountStrategy{
+public abstract class BaseCountStrategy implements ICountStrategy{
 
     BiFunction<Integer, Integer, Boolean> function;
 
@@ -20,5 +20,13 @@ public class BaseCountStrategy implements ICountStrategy{
             }
         }
         return sumOfFirstSequence == sumOfSecondSequence;
+    }
+
+    public BiFunction<Integer, Integer, Boolean> getFunction() {
+        return function;
+    }
+
+    public void setFunction(BiFunction<Integer, Integer, Boolean> function) {
+        this.function = function;
     }
 }

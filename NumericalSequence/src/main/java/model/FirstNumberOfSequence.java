@@ -6,7 +6,7 @@ public class FirstNumberOfSequence {
     Integer output;
 
     public FirstNumberOfSequence(Double input) {
-        this.input = input;
+        this.input = Math.sqrt(input);
     }
 
     public Double getInput() {
@@ -17,10 +17,7 @@ public class FirstNumberOfSequence {
         this.input = Math.abs(input);
     }
 
-    public Integer getOutput() throws IllegalArgumentException{
-        if (input < 0){
-            throw new IllegalArgumentException();
-        }
+    public Integer getOutput(){
         output = input.intValue();
         if(input > output){
             output += 1;

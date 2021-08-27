@@ -35,14 +35,14 @@ public interface Messages {
     String TRIANGLES_FORMAT_INPUT_MESSAGE = "Type your data with next format:\n"
                                             + "<name>,<sideA length>,<sideB length>,<sideC length>";
 
-    String[] FIRST_RANGE = {"one", "two", "three","four", "five",
-                            "six", "seven", "eight", "nine", "ten", "eleven",
-                            "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    String[] FIRST_RANGE = {"", " one", " two", " three"," four", " five",
+                            " six", " seven", " eight", " nine", " ten", " eleven",
+                            " twelve", " thirteen", " fourteen", " fifteen", " sixteen", " seventeen", " eighteen", " nineteen"};
 
-    String[] SECOND_RANGE = {"twenty", "thirty", "forty", "fifty",
-                            "sixty", "seventy", "eighty", "ninety"};
+    String[] SECOND_RANGE = {"", " ten", " twenty", " thirty", " forty", " fifty",
+                            " sixty", " seventy", " eighty", " ninety"};
 
-    String[] RANGES = {"million", "thousand", "hundred"};
+    String[] RANGES = {"", " thousand", " million", " billion", " trillion", " quadrillion", " quintillion"};
 
     String PARSER_WELCOME_MESSAGE = "Type your data with next format:\n"
                                     + "<file path>, <string for count> or\n" +

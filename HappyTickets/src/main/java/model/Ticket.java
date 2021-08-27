@@ -7,6 +7,7 @@ public class Ticket {
 
     boolean easyHappy;
     boolean difficultHappy;
+    boolean customerHappy;
     int number;
 
     public Ticket(int number) {
@@ -21,6 +22,14 @@ public class Ticket {
             tempNumber /= 10;
         }
         return numberAsList;
+    }
+
+    public boolean isCustomerHappy() {
+        return customerHappy;
+    }
+
+    public void setCustomerHappy(boolean customerHappy) {
+        this.customerHappy = customerHappy;
     }
 
     public boolean isEasyHappy() {

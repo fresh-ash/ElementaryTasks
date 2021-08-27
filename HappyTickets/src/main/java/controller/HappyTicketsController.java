@@ -29,7 +29,10 @@ public class HappyTicketsController {
     void getAndValidateData() throws IllegalArgumentException{
         String[] data = Input.splitInput(cli.waitInput(Messages.HAPPY_TICKET_FORMAT_INPUT), ",") ;
         if (data.length != 2){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Need to enter two parameters!");
+        }
+        if (data[0].length() > 6 || data[1].length() > 6){
+            throw new IllegalArgumentException("Ticket number can't be more than 999999!");
         }
         startSequence = IValidator.getPositiveIntegerFromString(data[0]);
         finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
@@ -45,7 +48,7 @@ public class HappyTicketsController {
             view.showResult(easyWay.getCountHappyTickets(), difficultWay.getCountHappyTickets(), ticketsHelper.getWinner());
         }
         catch (IllegalArgumentException e){
-            System.err.println(Messages.INCORRECT_INPUT);
+            System.err.println(e.getMessage());
         }
         catch (Exception e){
             System.err.println(e.getMessage());

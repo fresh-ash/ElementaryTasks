@@ -9,7 +9,8 @@ public class HappyTicketsMain implements Command {
 
     @Override
     public void runCommand() {
-        HappyTicketsController controller = new HappyTicketsController(new HappyTicketsView(), new CLI(new Scanner(System.in)));
+        HappyTicketsController controller = new HappyTicketsController(new HappyTicketsView(),
+                                                new CLI(new Scanner(System.in)));
         controller.showWelcomeMessAndStart();
     }
 }

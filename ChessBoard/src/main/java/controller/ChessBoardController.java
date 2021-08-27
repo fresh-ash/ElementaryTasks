@@ -53,8 +53,5 @@ public class ChessBoardController {
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startChessBoardApp();
         }
-        else {
-            return;
-        }
     }
 }

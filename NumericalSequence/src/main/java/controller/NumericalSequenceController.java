@@ -38,7 +38,7 @@ public class NumericalSequenceController {
         }
         sequenceLength = IValidator.getPositiveIntegerFromString(data[0]);
         Integer number = IValidator.getPositiveIntegerFromString(data[1]);
-        firstNumberOfSequence = new FirstNumberOfSequence(Math.sqrt(number));
+        firstNumberOfSequence = new FirstNumberOfSequence(number.doubleValue());
     }
 
     public void startNumericalSequenceApp(){

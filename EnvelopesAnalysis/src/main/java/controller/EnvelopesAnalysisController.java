@@ -68,14 +68,5 @@ public class EnvelopesAnalysisController {
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             getDataAndShow();
         }
-        else {
-            return;
-        }
-
     }
-
-
-
-
-
 }

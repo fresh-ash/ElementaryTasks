@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        boolean continueApp = true;
         Map<String, Command> applications = new HashMap<>();
         Input input = new CLI(new Scanner(System.in));
         applications.put("2", new EnvelopesAnalysisMain());
@@ -16,12 +17,16 @@ public class Main {
         applications.put("4", new FileParserMain());
         applications.put("7", new NumericalSequenceMain());
 
-        while (true) {
+        while (continueApp) {
             try {
-                applications.get(input.waitInput(Messages.START_MAIN_MESSAGE)).runCommand();
+                String consoleInput = input.waitInput(Messages.START_MAIN_MESSAGE);
+                if (consoleInput.equals("0")){
+                    break;
+                }
+                applications.get(consoleInput).runCommand();
             }
             catch (NullPointerException e){
-                System.err.println("Incorrect input!");
+                System.err.println(Messages.INCORRECT_INPUT);
             }
         }
 

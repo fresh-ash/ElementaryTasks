@@ -1,7 +1,5 @@
 package view;
 
-import java.util.Map;
-
 public class HappyTicketsView implements IViewHappyTickets{
 
     @Override
