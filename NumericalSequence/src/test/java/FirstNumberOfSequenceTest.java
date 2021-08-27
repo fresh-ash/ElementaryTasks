@@ -7,7 +7,7 @@ public class FirstNumberOfSequenceTest {
     @Test
     public void testGetMagicNumberOutput(){
         Double testValue = 56.2899;
-        Integer expectedValue = 57;
+        Integer expectedValue = 8;
         FirstNumberOfSequence firstNumberOfSequence = new FirstNumberOfSequence(testValue);
         Assert.assertEquals(expectedValue, firstNumberOfSequence.getOutput());
     }
@@ -15,7 +15,7 @@ public class FirstNumberOfSequenceTest {
     @Test
     public void testGetMagicNumberOutputWithNegativeData(){
         Double testValue = -56.2899;
-        Integer expectedValue = 57;
+        Integer expectedValue = 0;
         FirstNumberOfSequence firstNumberOfSequence = new FirstNumberOfSequence(testValue);
         Assert.assertEquals(expectedValue, firstNumberOfSequence.getOutput());
     }
