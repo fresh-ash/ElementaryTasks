@@ -34,7 +34,7 @@ public class NumericalSequenceController {
         String[] data = Input.splitInput(cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE), ",");
         if (data.length != 2){
             log.error("Incorrect input! Few arguments!");
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Need to enter two parameters!");
         }
         sequenceLength = IValidator.getPositiveIntegerFromString(data[0]);
         Integer number = IValidator.getPositiveIntegerFromString(data[1]);
@@ -52,7 +52,7 @@ public class NumericalSequenceController {
             view.showSequence(sequence);
         }
         catch (IllegalArgumentException e){
-            System.err.println(Messages.INCORRECT_INPUT);
+            System.err.println(e.getMessage());
         }
         catch (Exception e){
             log.error(e.getMessage());
