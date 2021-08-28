@@ -15,6 +15,7 @@ public class HappyTicketsController {
     Input cli;
     Integer startSequence;
     Integer finishSequence;
+    String[] data;
 
     public HappyTicketsController(IViewHappyTickets view, Input cli) {
         this.view = view;
@@ -26,14 +27,19 @@ public class HappyTicketsController {
         startHappyTicketApp();
     }
 
-    void getAndValidateData() throws IllegalArgumentException{
-        String[] data = Input.splitInput(cli.waitInput(Messages.HAPPY_TICKET_FORMAT_INPUT), ",") ;
+    void validateInputData() throws IllegalArgumentException{
         if (data.length != 2){
             throw new IllegalArgumentException("Need to enter two parameters!");
         }
         if (data[0].length() > 6 || data[1].length() > 6){
             throw new IllegalArgumentException("Ticket number can't be more than 999999!");
         }
+    }
+
+    void getAndValidateData() throws IllegalArgumentException{
+        String inputData = cli.waitInput(Messages.HAPPY_TICKET_FORMAT_INPUT);
+        data = Input.splitInput(inputData, ",") ;
+        validateInputData();
         startSequence = IValidator.getPositiveIntegerFromString(data[0]);
         finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
     }

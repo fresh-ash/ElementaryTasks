@@ -1,3 +1,5 @@
+package JUnitTests;
+
 import model.Ticket;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,7 +14,8 @@ public class TicketTest {
 
     @Parameterized.Parameters
     public static Iterable input(){
-        return Arrays.asList(new Object[][] {{0, Arrays.asList()}, {4567890, Arrays.asList(0,9,8,7,6,5,4)}, {333333, Arrays.asList(3,3,3,3,3,3)}});
+        return Arrays.asList(new Object[][] {{0, Arrays.asList()}, {4567890, Arrays.asList(0,9,8,7,6,5,4)},
+                                                {333333, Arrays.asList(3,3,3,3,3,3)}});
     }
 
     List<Integer> expectedList;

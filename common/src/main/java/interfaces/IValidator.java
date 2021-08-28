@@ -23,7 +23,7 @@ public interface IValidator {
     static Integer getPositiveIntegerFromString(String str) throws IllegalArgumentException{
         Integer data = Integer.valueOf(str);
         if( IValidator.checkNegativeValue(data)){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Negative value!");
         }
         return data;
 

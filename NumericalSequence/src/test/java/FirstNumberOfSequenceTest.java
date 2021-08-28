@@ -4,19 +4,21 @@ import org.junit.Test;
 
 public class FirstNumberOfSequenceTest {
 
+    FirstNumberOfSequence firstNumberOfSequence = new FirstNumberOfSequence(0.0);
+
     @Test
-    public void testGetMagicNumberOutput(){
+    public void testGetFirstNumberOfSequenceOutput(){
         Double testValue = 56.2899;
         Integer expectedValue = 8;
-        FirstNumberOfSequence firstNumberOfSequence = new FirstNumberOfSequence(testValue);
+        firstNumberOfSequence.setInput(testValue);
         Assert.assertEquals(expectedValue, firstNumberOfSequence.getOutput());
     }
 
     @Test
-    public void testGetMagicNumberOutputWithNegativeData(){
+    public void testGetFirstNumberOfSequenceWithNegativeData(){
         Double testValue = -56.2899;
         Integer expectedValue = 0;
-        FirstNumberOfSequence firstNumberOfSequence = new FirstNumberOfSequence(testValue);
+        firstNumberOfSequence.setInput(testValue);
         Assert.assertEquals(expectedValue, firstNumberOfSequence.getOutput());
     }
 }

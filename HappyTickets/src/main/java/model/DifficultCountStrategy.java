@@ -3,7 +3,7 @@ package model;
 public class DifficultCountStrategy extends BaseCountStrategy {
 
     public DifficultCountStrategy() {
-        function = (index, value)-> index%2 == 0;
+        predictFunction = (index, value)-> index%2 == 0;
     }
 
 }

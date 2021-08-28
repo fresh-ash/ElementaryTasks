@@ -5,14 +5,14 @@ import java.util.function.BiFunction;
 
 public abstract class BaseCountStrategy implements ICountStrategy{
 
-    BiFunction<Integer, Integer, Boolean> function;
+    BiFunction<Integer, Integer, Boolean> predictFunction;
 
     @Override
     public boolean checkTicket(List<Integer> number) {
         int sumOfFirstSequence = 0;
         int sumOfSecondSequence = 0;
         for (int i = 0; i < number.size(); i++){
-            if(function.apply(i, number.get(i))){
+            if(predictFunction.apply(i, number.get(i))){
                 sumOfFirstSequence += number.get(i);
             }
             else {
@@ -22,11 +22,11 @@ public abstract class BaseCountStrategy implements ICountStrategy{
         return sumOfFirstSequence == sumOfSecondSequence;
     }
 
-    public BiFunction<Integer, Integer, Boolean> getFunction() {
-        return function;
+    public BiFunction<Integer, Integer, Boolean> getPredictFunction() {
+        return predictFunction;
     }
 
-    public void setFunction(BiFunction<Integer, Integer, Boolean> function) {
-        this.function = function;
+    public void setPredictFunction(BiFunction<Integer, Integer, Boolean> predictFunction) {
+        this.predictFunction = predictFunction;
     }
 }
