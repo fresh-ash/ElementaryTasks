@@ -14,7 +14,10 @@ public class TicketsHelper {
         this.difficultWay = difficultWay;
     }
 
-    public void countHappyTickets(int startSequence, int endSequence){
+    public void countHappyTickets(int startSequence, int endSequence) throws IllegalArgumentException{
+        if (startSequence < 0 || endSequence < 0){
+            throw new IllegalArgumentException("Arguments for \'countHappyTicket\' function must be positive!");
+        }
         for (int i = startSequence; i <= endSequence; i++){
             Ticket ticket = new Ticket(i);
             List<Integer> numberAsList = ticket.getNumberAsArray();
