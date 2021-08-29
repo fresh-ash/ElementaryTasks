@@ -16,6 +16,7 @@ public class NumericalSequenceController {
     Input cli;
     FirstNumberOfSequence firstNumberOfSequence;
     Integer sequenceLength;
+    String[] data;
     public static final Logger log = Logger.getLogger(NumericalSequenceController.class);
 
     public NumericalSequenceController(INumericalSequenceView view, Input cli) {
@@ -30,12 +31,17 @@ public class NumericalSequenceController {
         startNumericalSequenceApp();
     }
 
-    public void getAndValidateData() throws IllegalArgumentException{
-        String[] data = Input.splitInput(cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE), ",");
-        if (data.length != 2){
+    void validateData() throws IllegalArgumentException{
+        if (data.length != 2 || data[0] == "" || data[1] == ""){
             log.error("Incorrect input! Few arguments!");
             throw new IllegalArgumentException("Need to enter two parameters!");
         }
+    }
+
+    public void getAndValidateData() throws IllegalArgumentException{
+        String getInput = cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE);
+        data = Input.splitInput(getInput, ",");
+        validateData();
         sequenceLength = IValidator.getPositiveIntegerFromString(data[0]);
         Integer number = IValidator.getPositiveIntegerFromString(data[1]);
         firstNumberOfSequence = new FirstNumberOfSequence(number.doubleValue());

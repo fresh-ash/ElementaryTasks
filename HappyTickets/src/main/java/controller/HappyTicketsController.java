@@ -28,7 +28,7 @@ public class HappyTicketsController {
     }
 
     void validateInputData() throws IllegalArgumentException{
-        if (data.length != 2){
+        if (data.length != 2 || data[0] == "" || data[1] == ""){
             throw new IllegalArgumentException("Need to enter two parameters!");
         }
         if (data[0].length() > 6 || data[1].length() > 6){

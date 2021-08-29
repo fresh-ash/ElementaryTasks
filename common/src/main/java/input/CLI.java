@@ -24,6 +24,11 @@ public class CLI implements Input{
         return false;
     }
 
+    public Scanner getScanner() {
+        return scanner;
+    }
 
-
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
 }

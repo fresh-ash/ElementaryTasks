@@ -14,7 +14,7 @@ public class FirstNumberOfSequence {
     }
 
     public void setInput(Double input) {
-        this.input = Math.abs(input);
+        this.input = Math.sqrt(input);
     }
 
     public Integer getOutput(){
