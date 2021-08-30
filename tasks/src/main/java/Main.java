@@ -13,6 +13,7 @@ public class Main {
         Input input = new CLI(new Scanner(System.in));
         applications.put("2", new EnvelopesAnalysisMain());
         applications.put("1", new ChessBoardMain());
+        applications.put("3", new TriangleSortingMain());
         applications.put("6", new HappyTicketsMain());
         applications.put("4", new FileParserMain());
         applications.put("7", new NumericalSequenceMain());

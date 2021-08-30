@@ -1,6 +1,6 @@
 package controller;
 
-import interfaces.IValidator;
+import interfaces.Validator;
 import interfaces.Input;
 import interfaces.Messages;
 import model.DifficultCountStrategy;
@@ -40,8 +40,8 @@ public class HappyTicketsController {
         String inputData = cli.waitInput(Messages.HAPPY_TICKET_FORMAT_INPUT);
         data = Input.splitInput(inputData, ",") ;
         validateInputData();
-        startSequence = IValidator.getPositiveIntegerFromString(data[0]);
-        finishSequence = IValidator.getPositiveIntegerFromString(data[1]);
+        startSequence = Validator.getPositiveIntegerFromString(data[0]);
+        finishSequence = Validator.getPositiveIntegerFromString(data[1]);
     }
 
     public void startHappyTicketApp(){
@@ -54,7 +54,7 @@ public class HappyTicketsController {
             view.showResult(easyWay.getCountHappyTickets(), difficultWay.getCountHappyTickets(), ticketsHelper.getWinner());
         }
         catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
+            System.err.println(Messages.INCORRECT_INPUT + e.getMessage());
         }
         catch (Exception e){
             System.err.println(e.getMessage());

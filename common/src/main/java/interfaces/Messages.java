@@ -14,7 +14,7 @@ public interface Messages {
                                 "| 0. Exit                                 |\n" +
                                 "Please, enter your choice with next format:\n <number>";
 
-    String INCORRECT_INPUT = "Incorrect input! Try again!";
+    String INCORRECT_INPUT = "Incorrect input! Try again!\n";
     String UNDEFINED_ERR = "Undefined exception!";
     String CHECK_ANSWER = "Do you want to continue?\nPlease, type \'yes\' or \'y\':";
 

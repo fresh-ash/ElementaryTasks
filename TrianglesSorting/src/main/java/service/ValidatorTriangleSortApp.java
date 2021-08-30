@@ -2,14 +2,13 @@ package service;
 
 import input.ValidData;
 import input.Validated;
-import interfaces.IValidator;
+import interfaces.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValidatorTriangleSortApp implements IValidator {
+public class ValidatorTriangleSortApp{
 
-    @Override
     public List<Validated> validateData(String[] args, int neededCountArgs) throws IllegalArgumentException{
         List<Validated> validData;
         if(args.length == neededCountArgs){
@@ -22,7 +21,7 @@ public class ValidatorTriangleSortApp implements IValidator {
             }
             for (int i = 1; i < args.length; i++){
                 Double data = Double.valueOf(args[i]);
-                if(IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)){
+                if(Validator.checkZeroValue(data) || Validator.checkNegativeValue(data)){
                     throw new IllegalArgumentException();
                 }
                 else {

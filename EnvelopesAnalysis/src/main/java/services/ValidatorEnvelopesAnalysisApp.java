@@ -1,6 +1,6 @@
 package services;
 
-import interfaces.IValidator;
+import interfaces.Validator;
 import interfaces.Messages;
 
 public class ValidatorEnvelopesAnalysisApp implements IValidateData {
@@ -9,7 +9,7 @@ public class ValidatorEnvelopesAnalysisApp implements IValidateData {
         try {
             if (str != "" && str != null) {
                 Float data = Float.valueOf(str);
-                if (IValidator.checkZeroValue(data) || IValidator.checkNegativeValue(data)) {
+                if (Validator.checkZeroValue(data) || Validator.checkNegativeValue(data)) {
                     throw new IllegalArgumentException();
                 }
                 return data;

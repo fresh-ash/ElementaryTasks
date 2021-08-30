@@ -1,6 +1,6 @@
 package controller;
 
-import interfaces.IValidator;
+import interfaces.Validator;
 import interfaces.Input;
 import interfaces.Messages;
 import model.FirstNumberOfSequence;
@@ -42,8 +42,8 @@ public class NumericalSequenceController {
         String getInput = cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE);
         data = Input.splitInput(getInput, ",");
         validateData();
-        sequenceLength = IValidator.getPositiveIntegerFromString(data[0]);
-        Integer number = IValidator.getPositiveIntegerFromString(data[1]);
+        sequenceLength = Validator.getPositiveIntegerFromString(data[0]);
+        Integer number = Validator.getPositiveIntegerFromString(data[1]);
         firstNumberOfSequence = new FirstNumberOfSequence(number.doubleValue());
     }
 

@@ -2,9 +2,10 @@ package controller;
 
 import input.CLI;
 import input.Validated;
-import interfaces.IValidator;
+import interfaces.Validator;
 import interfaces.Messages;
 import model.Triangle;
+import service.ValidatorTriangleSortApp;
 import util.MathOperations;
 import view.IViewTriangleSortApp;
 
@@ -15,11 +16,11 @@ import java.util.TreeSet;
 public class TriangleSortingAppController {
 
     IViewTriangleSortApp view;
-    IValidator validator;
+    ValidatorTriangleSortApp validator;
     CLI cli;
     TreeSet<Triangle> sortedTriangles;
 
-    public TriangleSortingAppController(IViewTriangleSortApp view, IValidator validator, CLI cli) {
+    public TriangleSortingAppController(IViewTriangleSortApp view, ValidatorTriangleSortApp validator, CLI cli) {
         this.view = view;
         this.validator = validator;
         this.cli = cli;
@@ -40,7 +41,6 @@ public class TriangleSortingAppController {
                 .toArray(String[]::new);
         return inputData;
     }
-
 
     public void startApp(){
         view.showStartMessage(Messages.TRIANGLES_WELCOME_MESSAGE);

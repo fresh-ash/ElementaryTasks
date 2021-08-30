@@ -3,7 +3,7 @@ package controller;
 import interfaces.Input;
 import interfaces.Messages;
 import model.ChessBoardBuilder;
-import interfaces.IValidator;
+import interfaces.Validator;
 import view.IViewChessBoardApp;
 
 public class ChessBoardController {
@@ -34,9 +34,9 @@ public class ChessBoardController {
     public void startChessBoardApp(){
         try{
             String[] data = getDataFromInput();
-            this.height = IValidator.getPositiveIntegerFromString(data[0]);
-            this.width = IValidator.getPositiveIntegerFromString(data[1]);
-            if (IValidator.checkZeroValue(width) || IValidator.checkZeroValue(height)){
+            this.height = Validator.getPositiveIntegerFromString(data[0]);
+            this.width = Validator.getPositiveIntegerFromString(data[1]);
+            if (Validator.checkZeroValue(width) || Validator.checkZeroValue(height)){
                 throw new IllegalArgumentException();
             }
             ChessBoardBuilder boardBuilder = new ChessBoardBuilder();

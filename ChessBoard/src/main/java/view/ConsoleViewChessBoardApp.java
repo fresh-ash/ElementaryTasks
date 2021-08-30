@@ -20,7 +20,6 @@ public class ConsoleViewChessBoardApp implements IViewChessBoardApp{
             }
             System.out.println();
         }
-
     }
 
     @Override
