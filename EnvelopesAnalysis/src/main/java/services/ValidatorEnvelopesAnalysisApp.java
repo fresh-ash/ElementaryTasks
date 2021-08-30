@@ -1,6 +1,6 @@
 package services;
 
-import interfaces.Validator;
+import util.Validator;
 import interfaces.Messages;
 
 public class ValidatorEnvelopesAnalysisApp implements IValidateData {

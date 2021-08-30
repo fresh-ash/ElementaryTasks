@@ -2,7 +2,6 @@ package controller;
 
 import input.CLI;
 import input.Validated;
-import interfaces.Validator;
 import interfaces.Messages;
 import model.Triangle;
 import service.ValidatorTriangleSortApp;

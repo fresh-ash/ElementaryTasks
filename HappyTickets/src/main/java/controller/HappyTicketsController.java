@@ -1,6 +1,6 @@
 package controller;
 
-import interfaces.Validator;
+import util.Validator;
 import interfaces.Input;
 import interfaces.Messages;
 import model.DifficultCountStrategy;

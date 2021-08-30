@@ -3,7 +3,7 @@ package controller;
 import interfaces.Input;
 import interfaces.Messages;
 import model.ChessBoardBuilder;
-import interfaces.Validator;
+import util.Validator;
 import view.IViewChessBoardApp;
 
 public class ChessBoardController {

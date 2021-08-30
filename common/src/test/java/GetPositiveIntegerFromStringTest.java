@@ -1,4 +1,4 @@
-import interfaces.Validator;
+import util.Validator;
 import org.junit.Assert;
 import org.junit.Test;
 

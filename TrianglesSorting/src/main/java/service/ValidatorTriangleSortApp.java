@@ -2,7 +2,7 @@ package service;
 
 import input.ValidData;
 import input.Validated;
-import interfaces.Validator;
+import util.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
