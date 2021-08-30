@@ -12,29 +12,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-invoker-plugin</artifactId>
-            <version>3.2.2</version>
-            <configuration>
-                <debug>true</debug>
-                <pomIncludes>
-                    <pomInclude>EnvelopesAnalysis/pom.xml</pomInclude>
-                </pomIncludes>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>build</id>
-                    <goals>
-                        <goal>run</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
-    </build>
+
 
     <dependencies>
         <dependency>
