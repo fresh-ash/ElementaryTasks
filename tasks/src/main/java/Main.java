@@ -19,6 +19,8 @@ public class Main {
 
         while (continueApp) {
             try {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
                 String consoleInput = input.waitInput(Messages.START_MAIN_MESSAGE);
                 if (consoleInput.equals("0")){
                     break;

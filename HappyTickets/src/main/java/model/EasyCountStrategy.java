@@ -2,7 +2,10 @@ package model;
 
 public class EasyCountStrategy extends BaseCountStrategy {
 
-    public EasyCountStrategy() {
-        predictFunction = (index, value)-> index > 2;
+    public EasyCountStrategy() throws IllegalArgumentException{
+        predictFunction = (index, value)-> {
+            if(index > 5) throw new IllegalArgumentException();
+            return index > 2;
+        };
     }
 }

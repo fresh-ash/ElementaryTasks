@@ -1,6 +1,5 @@
 package interfaces;
 
-import input.ValidData;
 import input.Validated;
 import java.util.List;
 

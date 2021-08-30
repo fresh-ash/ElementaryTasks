@@ -2,17 +2,17 @@ package interfaces;
 
 public interface Messages {
     int CONSOLE_WIDTH = 80;
-    String START_MAIN_MESSAGE = "=============Elementary Tasks==============\n" +
-                                "1. Chess Board\n" +
-                                "2. Envelopes Analysis\n" +
-                                "3. Triangles Sorting\n" +
-                                "4. File Parser\n" +
-                                "5. Number in Words\n" +
-                                "6. Happy Tickets\n" +
-                                "7. Numerical Sequence\n" +
-                                "8. Fibonacci Numbers\n" +
-                                "0. Exit\n" +
-                                "Please, enter your choice with next format: <number>";
+    String START_MAIN_MESSAGE = "\n=============Elementary Tasks==============\n" +
+                                "| 1. Chess Board                          |\n" +
+                                "| 2. Envelopes Analysis                   |\n" +
+                                "| 3. Triangles Sorting                    |\n" +
+                                "| 4. File Parser                          |\n" +
+                                "| 5. Number in Words                      |\n" +
+                                "| 6. Happy Tickets                        |\n" +
+                                "| 7. Numerical Sequence                   |\n" +
+                                "| 8. Fibonacci Numbers                    |\n" +
+                                "| 0. Exit                                 |\n" +
+                                "Please, enter your choice with next format:\n <number>";
 
     String INCORRECT_INPUT = "Incorrect input! Try again!";
     String UNDEFINED_ERR = "Undefined exception!";
