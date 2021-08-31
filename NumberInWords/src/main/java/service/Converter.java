@@ -4,7 +4,7 @@ import interfaces.Messages;
 
 public class Converter {
 
-    private String convertLessThanThousand(int number) {
+    private String convertTriplex(int number) {
         String current;
         if (number % 100 < 20){
             current = Messages.FIRST_RANGE[number % 100];
@@ -33,7 +33,7 @@ public class Converter {
         do {
             int n = number % 1000;
             if (n != 0){
-                String s = convertLessThanThousand(n);
+                String s = convertTriplex(n);
                 current = s + Messages.RANGES[place] + current;
             }
             place++;
@@ -41,5 +41,4 @@ public class Converter {
         } while (number > 0);
         return (prefix + current).trim();
     }
-
 }

@@ -32,6 +32,5 @@ public class Main {
                 System.err.println(Messages.INCORRECT_INPUT);
             }
         }
-
     }
 }

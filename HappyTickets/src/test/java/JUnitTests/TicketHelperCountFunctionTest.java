@@ -41,7 +41,7 @@ public class TicketHelperCountFunctionTest {
     }
 
     @Test
-    public void testTicketHelperCountFunction() throws IllegalArgumentException{
+    public void testTicketHelperCountFunction(){
         try {
             helper.countHappyTickets(firstNumberOfSequence, lastNumberOfSequence);
             int gotEasyWayData = easyWay.getCountHappyTickets();

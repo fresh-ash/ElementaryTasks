@@ -36,7 +36,7 @@ public class FileParserController {
             }
             else {
                 FileIOService.writeToFile(string.replaceAll(data[1], data[2]), data[0]);
-                System.err.println("Success!");
+                System.out.println("Success!");
             }
         }
         catch (IllegalArgumentException e){
@@ -51,9 +51,6 @@ public class FileParserController {
 
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startFileParserApp();
-        }
-        else {
-            return;
         }
     }
 }
