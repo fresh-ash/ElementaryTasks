@@ -10,7 +10,7 @@ public class HappyTicketsView implements IViewHappyTickets{
     }
 
     @Override
-    public void showWelcomeMess(String str) {
+    public void showInfoMessage(String str) {
         System.out.println(str);
     }
 

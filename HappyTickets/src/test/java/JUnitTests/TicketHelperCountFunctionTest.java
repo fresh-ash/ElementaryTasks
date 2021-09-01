@@ -20,12 +20,15 @@ public class TicketHelperCountFunctionTest {
     TicketsHelper helper;
     int firstNumberOfSequence;
     int lastNumberOfSequence;
-    int expectedValue;
+    int expectedValueEasyWay;
+    int getExpectedValueDifficultWay;
 
-    public TicketHelperCountFunctionTest(int firstNumberOfSequence, int lastNumberOfSequence, int expectedValue) {
+    public TicketHelperCountFunctionTest(int firstNumberOfSequence, int lastNumberOfSequence, int expectedValueEasyWay,
+                                         int getExpectedValueDifficultWay) {
         this.firstNumberOfSequence = firstNumberOfSequence;
         this.lastNumberOfSequence = lastNumberOfSequence;
-        this.expectedValue = expectedValue;
+        this.expectedValueEasyWay = expectedValueEasyWay;
+        this.getExpectedValueDifficultWay = getExpectedValueDifficultWay;
     }
 
     @Before
@@ -37,7 +40,7 @@ public class TicketHelperCountFunctionTest {
 
     @Parameterized.Parameters
     public static Iterable input(){
-        return Arrays.asList(new Object[][] {{0, 0, 1}, {-1, 567, 0}, {0, 999999, 55252}});
+        return Arrays.asList(new Object[][] {{0, 0, 1, 1}, {-1, 567, 0, 0}, {0, 999999, 55252, 55252}, {0, 100, 1, 10}});
     }
 
     @Test
@@ -46,8 +49,8 @@ public class TicketHelperCountFunctionTest {
             helper.countHappyTickets(firstNumberOfSequence, lastNumberOfSequence);
             int gotEasyWayData = easyWay.getCountHappyTickets();
             int gotDifficultWayData = difficultWay.getCountHappyTickets();
-            Assert.assertEquals(expectedValue, gotEasyWayData);
-            Assert.assertEquals(expectedValue, gotDifficultWayData);
+            Assert.assertEquals(expectedValueEasyWay, gotEasyWayData);
+            Assert.assertEquals(getExpectedValueDifficultWay, gotDifficultWayData);
         }
         catch (IllegalArgumentException e){
             System.out.println(e.getMessage());

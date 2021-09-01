@@ -20,8 +20,7 @@ public class CLI implements Input{
     public boolean checkAnswer(String str) {
         String answer = waitInput(str);
         answer = answer.toLowerCase();
-        if (answer.equals("y")  || answer.equals("yes")) return true;
-        return false;
+        return  (answer.equals("y")  || answer.equals("yes"));
     }
 
     public Scanner getScanner() {

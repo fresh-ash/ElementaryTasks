@@ -38,4 +38,11 @@ public class GetPositiveIntegerFromStringTest {
         Assert.assertEquals(expectedData, gotData);
     }
 
+    @Test
+    public void testGettingValueFromZeroStarString(){
+        String testData = "0040";
+        int expectedValue = 40;
+        int gotData = Validator.getPositiveIntegerFromString(testData);
+        Assert.assertEquals(expectedValue, gotData);
+    }
 }

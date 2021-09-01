@@ -26,19 +26,19 @@ public class NumericalSequenceController {
     }
 
     public void showWelcomeMessageAndStart(){
-        view.showWelcomeMessage(Messages.NUMERICAL_SEQUENCE_WELCOME_MESS);
+        view.showInfoMessage(Messages.NUMERICAL_SEQUENCE_WELCOME_MESS);
         log.info("Start application");
         startNumericalSequenceApp();
     }
 
     void validateData() throws IllegalArgumentException{
-        if (data.length != 2 || data[0] == "" || data[1] == ""){
+        if (data.length != 2 || data[0].equals("") || data[1].equals("")){
             log.error("Incorrect input! Few arguments!");
             throw new IllegalArgumentException("Need to enter two parameters!");
         }
     }
 
-    public void getAndValidateData() throws IllegalArgumentException{
+    void getAndValidateData() throws IllegalArgumentException{
         String getInput = cli.waitInput(Messages.NUMERICAL_SEQUENCE_GET_LENGTH_SEQUENCE);
         data = Input.splitInput(getInput, ",");
         validateData();
@@ -58,11 +58,11 @@ public class NumericalSequenceController {
             view.showSequence(sequence);
         }
         catch (IllegalArgumentException e){
-            System.err.println(e.getMessage());
+            view.showInfoMessage(e.getMessage());
         }
         catch (Exception e){
             log.error(e.getMessage());
-            System.err.println(e.getMessage());
+            view.showInfoMessage("Something went wrong!");
         }
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startNumericalSequenceApp();

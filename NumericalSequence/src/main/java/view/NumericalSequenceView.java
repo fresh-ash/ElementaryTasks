@@ -5,7 +5,7 @@ import java.util.List;
 public class NumericalSequenceView implements INumericalSequenceView{
 
     @Override
-    public void showWelcomeMessage(String str) {
+    public void showInfoMessage(String str) {
         System.out.println(str);
     }
 

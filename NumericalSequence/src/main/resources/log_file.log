@@ -33,3 +33,25 @@
 2021-08-30 15:31:43 INFO  NumericalSequenceController:29 - Start application
 2021-08-30 15:31:54 INFO  NumericalSequenceController:47 - Get correct data
 2021-08-30 15:31:54 INFO  NumericalSequenceController:51 - Show result
+2021-09-01 17:36:54 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:36:54 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:36:54 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-09-01 17:37:40 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:37:40 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:38:21 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:38:21 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:38:21 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-09-01 17:39:42 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:39:42 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:39:42 INFO  NumericalSequenceController:53 - Get correct data
+2021-09-01 17:39:42 INFO  NumericalSequenceController:57 - Show result
+2021-09-01 17:42:34 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:42:34 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:42:34 INFO  NumericalSequenceController:53 - Get correct data
+2021-09-01 17:42:34 INFO  NumericalSequenceController:57 - Show result
+2021-09-01 17:42:40 INFO  NumericalSequenceController:53 - Get correct data
+2021-09-01 17:42:40 INFO  NumericalSequenceController:57 - Show result
+2021-09-01 17:46:08 INFO  NumericalSequenceController:25 - Create controller
+2021-09-01 17:46:08 INFO  NumericalSequenceController:30 - Start application
+2021-09-01 17:46:08 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!
+2021-09-01 17:46:12 ERROR NumericalSequenceController:36 - Incorrect input! Few arguments!

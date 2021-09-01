@@ -12,13 +12,15 @@ import java.util.List;
 @RunWith(Parameterized.class)
 public class EasyCountStrategyTest extends BaseStrategyTest{
 
-    public EasyCountStrategyTest(Integer index, Integer value, boolean expectedResultForPredictFunction, List<Integer> dataList, boolean expectedResultForStrategy) {
+    public EasyCountStrategyTest(Integer index, Integer value, boolean expectedResultForPredictFunction,
+                                 List<Integer> dataList, boolean expectedResultForStrategy) {
         super(index, value, expectedResultForPredictFunction, dataList, expectedResultForStrategy);
     }
 
     @Parameterized.Parameters
     public static Iterable input(){
-        return Arrays.asList(new Object[][] {{3, 1, true, Arrays.asList(3,2,2,7), true}, {0, 1, false, Arrays.asList(2,2,2,3), false}});
+        return Arrays.asList(new Object[][] {{3, 1, true, Arrays.asList(3,2,2,7), true},
+                                            {0, 1, false, Arrays.asList(2,2,2,3), false}});
     }
 
     EasyCountStrategy strategy;

@@ -11,12 +11,14 @@ import java.util.List;
 
 @RunWith(Parameterized.class)
 public class HappyTicketHolderTest {
-
     @Parameterized.Parameters
     public static Iterable input(){
-        return Arrays.asList(new Object[][] {{Arrays.asList(4, 2, 2, 2, 2, 4), new EasyCountStrategy(), 1}, {Arrays.asList(3, 2, 2, 2, 2, 4), new EasyCountStrategy(), 0},
-                                    {Arrays.asList(2, 1, 1, 2, 2, 2), new DifficultCountStrategy(), 1}, {Arrays.asList(1, 1, 1, 2, 2, 2), new DifficultCountStrategy(), 0},
-                                     {Arrays.asList(3, 3, 0, 2, 2, 2), new CustomerCountStrategy(), 1}, {Arrays.asList(3, 3, 1, 2, 2, 2), new CustomerCountStrategy(), 0}});
+        return Arrays.asList(new Object[][] {{Arrays.asList(4, 2, 2, 2, 2, 4), new EasyCountStrategy(), 1},
+                                            {Arrays.asList(3, 2, 2, 2, 2, 4), new EasyCountStrategy(), 0},
+                                            {Arrays.asList(2, 1, 1, 2, 2, 2), new DifficultCountStrategy(), 1},
+                                            {Arrays.asList(1, 1, 1, 2, 2, 2), new DifficultCountStrategy(), 0},
+                                            {Arrays.asList(3, 3, 0, 2, 2, 2), new CustomerCountStrategy(), 1},
+                                            {Arrays.asList(3, 3, 1, 2, 2, 2), new CustomerCountStrategy(), 0}});
     }
 
     List<Integer> number;

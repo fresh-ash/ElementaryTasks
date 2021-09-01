@@ -2,6 +2,9 @@ package util;
 
 public class Validator {
 
+    private Validator() {
+    }
+
     public static boolean checkNullValue(Number value){
         return value == null;
     }
@@ -31,7 +34,7 @@ public class Validator {
     }
 
     public static String getStringFromInput(String str) throws IllegalArgumentException{
-        if (str == ""){
+        if (str.equals("")){
             throw new IllegalArgumentException();
         }
         return str;

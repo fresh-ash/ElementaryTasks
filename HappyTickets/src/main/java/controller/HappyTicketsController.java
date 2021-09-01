@@ -23,12 +23,12 @@ public class HappyTicketsController {
     }
 
     public void showWelcomeMessAndStart(){
-        view.showWelcomeMess(Messages.HAPPY_TICKET_WELCOME_MESSAGE);
+        view.showInfoMessage(Messages.HAPPY_TICKET_WELCOME_MESSAGE);
         startHappyTicketApp();
     }
 
     void validateInputData() throws IllegalArgumentException{
-        if (data.length != 2 || data[0] == "" || data[1] == ""){
+        if (data.length != 2 || data[0].equals("") || data[1].equals("")){
             throw new IllegalArgumentException("Need to enter two parameters!");
         }
         if (data[0].length() > 6 || data[1].length() > 6){
@@ -54,10 +54,10 @@ public class HappyTicketsController {
             view.showResult(easyWay.getCountHappyTickets(), difficultWay.getCountHappyTickets(), ticketsHelper.getWinner());
         }
         catch (IllegalArgumentException e){
-            System.err.println(Messages.INCORRECT_INPUT + e.getMessage());
+            view.showInfoMessage(Messages.INCORRECT_INPUT + e.getMessage());
         }
         catch (Exception e){
-            System.err.println(e.getMessage());
+            view.showInfoMessage("Something went wrong!");
         }
         if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             startHappyTicketApp();

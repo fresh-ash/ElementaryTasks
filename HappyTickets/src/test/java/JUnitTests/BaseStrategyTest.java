@@ -9,7 +9,8 @@ public class BaseStrategyTest {
     boolean expectedResultForStrategy;
     List<Integer> dataList;
 
-    public BaseStrategyTest(Integer index, Integer value, boolean expectedResultForPredictFunction, List<Integer> dataList, boolean expectedResultForStrategy) {
+    public BaseStrategyTest(Integer index, Integer value, boolean expectedResultForPredictFunction,
+                            List<Integer> dataList, boolean expectedResultForStrategy) {
         this.index = index;
         this.value = value;
         this.expectedResultForPredictFunction = expectedResultForPredictFunction;
