@@ -22,10 +22,8 @@ public class FirstNumberOfSequence {
         if(input > output){
             output += 1;
         }
+
         return output;
     }
 
-    public void setOutput(Integer output) {
-        this.output = output;
-    }
 }

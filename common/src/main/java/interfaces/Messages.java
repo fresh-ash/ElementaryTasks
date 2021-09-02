@@ -15,7 +15,7 @@ public interface Messages {
                                 "Please, enter your choice with next format:\n <number>";
 
     String INCORRECT_INPUT = "Incorrect input! Try again!\n";
-    String UNDEFINED_ERR = "Undefined exception!";
+    String UNDEFINED_ERR = "Something went wrong!";
     String CHECK_ANSWER = "Do you want to continue?\nPlease, type \'yes\' or \'y\':";
 
     //ChessBoardApp messages

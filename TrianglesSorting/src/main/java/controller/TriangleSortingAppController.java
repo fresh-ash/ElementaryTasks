@@ -2,13 +2,12 @@ package controller;
 
 import input.CLI;
 import input.Validated;
+import interfaces.Input;
 import interfaces.Messages;
 import model.Triangle;
 import service.ValidatorTriangleSortApp;
 import util.MathOperations;
 import view.IViewTriangleSortApp;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -26,45 +25,31 @@ public class TriangleSortingAppController {
         this.sortedTriangles = new TreeSet<>();
     }
 
-    public String waitInput(String str){
-        return cli.waitInput(str);
-    }
-
-    public boolean checkAnswer(String str){
-        return cli.checkAnswer(str);
-    }
-
-    public String[] splitInput(String str, String regex){
-        String[] inputData = Arrays.stream(str.split(regex))
-                .map(String::trim)
-                .toArray(String[]::new);
-        return inputData;
-    }
-
     public void startApp(){
-        view.showStartMessage(Messages.TRIANGLES_WELCOME_MESSAGE);
+        view.showInfoMessage(Messages.TRIANGLES_WELCOME_MESSAGE);
         getData();
     }
 
     public void getData(){
         int neededArgsCount = 4;
-        String[] args = splitInput(waitInput(Messages.TRIANGLES_FORMAT_INPUT_MESSAGE), ",");
+        String[] args = Input.splitInput(cli.waitInput(Messages.TRIANGLES_FORMAT_INPUT_MESSAGE), ",");
         try {
             List<Validated> validData = validator.validateData(args, neededArgsCount);
             Double triangleSideA = (Double) validData.get(1).get();
             Double triangleSideB = (Double) validData.get(2).get();
             Double triangleSideC = (Double) validData.get(3).get();
             Double triangleSquare = MathOperations.getTriangleSquare(triangleSideA, triangleSideB, triangleSideC);
-            Triangle triangle = new Triangle((String) validData.get(0).get(), triangleSideA, triangleSideB, triangleSideC, triangleSquare);
+            Triangle triangle = new Triangle((String) validData.get(0).get(), triangleSideA,
+                                            triangleSideB, triangleSideC, triangleSquare);
             sortedTriangles.add(triangle);
         }
         catch (IllegalArgumentException e){
-            System.out.println(Messages.INCORRECT_INPUT);
+            view.showInfoMessage(Messages.INCORRECT_INPUT);
         }
         catch (Exception e){
-            System.err.println(e.getMessage());
+            view.showInfoMessage(Messages.UNDEFINED_ERR);
         }
-        if (checkAnswer(Messages.CHECK_ANSWER)){
+        if (cli.checkAnswer(Messages.CHECK_ANSWER)){
             getData();
         }
         else {
