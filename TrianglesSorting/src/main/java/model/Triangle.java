@@ -36,7 +36,7 @@ public class Triangle implements Comparable<Triangle>{
     public Double getSquare() {
         return square;
     }
-    
+
     @Override
     public String toString() {
         String str = "[Triangle "+ this.name + "]: "+ this.square +" cm^2\n";

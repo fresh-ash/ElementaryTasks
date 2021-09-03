@@ -20,18 +20,10 @@ public class EnvelopesAnalysisController {
         this.cli = cli;
     }
 
-    public String waitInput(String str){
-        return cli.waitInput(str);
-    }
-
-    public boolean checkAnswer(String str){
-        return cli.checkAnswer(str);
-    }
-
     public Float getCorrectInputParameter(String inviteMess){
             Float parameter = null;
             while (parameter == null){
-                String consoleInput = waitInput(inviteMess);
+                String consoleInput = cli.waitInput(inviteMess);
                 parameter = validateData.validateInput(consoleInput);
             }
             return parameter;
